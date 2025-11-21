@@ -239,38 +239,38 @@ class AndroidUiSettings extends PlatformUiSettings {
   });
 
   @override
-  Map<String, dynamic> toMap() => {
-        'android.toolbar_title': this.toolbarTitle,
-        'android.toolbar_color': int32(this.toolbarColor?.toARGB32()),
-        'android.status_bar_light': this.statusBarLight,
-        'android.nav_bar_light': this.navBarLight,
-        'android.toolbar_widget_color': int32(this.toolbarWidgetColor?.toARGB32()),
-        'android.background_color': int32(this.backgroundColor?.toARGB32()),
-        'android.active_controls_widget_color':
-            int32(this.activeControlsWidgetColor?.toARGB32()),
-        'android.dimmed_layer_color': int32(this.dimmedLayerColor?.toARGB32()),
-        'android.crop_frame_color': int32(this.cropFrameColor?.toARGB32()),
-        'android.crop_grid_color': int32(this.cropGridColor?.toARGB32()),
-        'android.crop_frame_stroke_width': this.cropFrameStrokeWidth,
-        'android.crop_grid_row_count': this.cropGridRowCount,
-        'android.crop_grid_column_count': this.cropGridColumnCount,
-        'android.crop_grid_stroke_width': this.cropGridStrokeWidth,
-        'android.show_crop_grid': this.showCropGrid,
-        'android.lock_aspect_ratio': this.lockAspectRatio,
-        'android.hide_bottom_controls': this.hideBottomControls,
-        'android.init_aspect_ratio': this.initAspectRatio?.name,
-        'android.crop_style': this.cropStyle.name,
-        'android.aspect_ratio_presets': aspectRatioPresets
-            .map<Map<String, dynamic>>((item) => {
-                  'name': item.name,
-                  if (item.data != null)
-                    'data': {
-                      'ratio_x': item.data!.$1,
-                      'ratio_y': item.data!.$2,
-                    },
-                })
-            .toList(),
-      };
+Map<String, dynamic> toMap() => {
+      'android.toolbar_title': this.toolbarTitle,
+      'android.toolbar_color': int32(this.toolbarColor?.value),
+      'android.status_bar_light': this.statusBarLight,
+      'android.nav_bar_light': this.navBarLight,
+      'android.toolbar_widget_color': int32(this.toolbarWidgetColor?.value),
+      'android.background_color': int32(this.backgroundColor?.value),
+      'android.active_controls_widget_color':
+          int32(this.activeControlsWidgetColor?.value),
+      'android.dimmed_layer_color': int32(this.dimmedLayerColor?.value),
+      'android.crop_frame_color': int32(this.cropFrameColor?.value),
+      'android.crop_grid_color': int32(this.cropGridColor?.value),
+      'android.crop_frame_stroke_width': this.cropFrameStrokeWidth,
+      'android.crop_grid_row_count': this.cropGridRowCount,
+      'android.crop_grid_column_count': this.cropGridColumnCount,
+      'android.crop_grid_stroke_width': this.cropGridStrokeWidth,
+      'android.show_crop_grid': this.showCropGrid,
+      'android.lock_aspect_ratio': this.lockAspectRatio,
+      'android.hide_bottom_controls': this.hideBottomControls,
+      'android.init_aspect_ratio': this.initAspectRatio?.name,
+      'android.crop_style': this.cropStyle.name,
+      'android.aspect_ratio_presets': aspectRatioPresets
+          .map<Map<String, dynamic>>((item) => {
+                'name': item.name,
+                if (item.data != null)
+                  'data': {
+                    'ratio_x': item.data!.$1,
+                    'ratio_y': item.data!.$2,
+                  },
+              })
+          .toList(),
+    };
 }
 
 ///
